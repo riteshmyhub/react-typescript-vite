@@ -3,13 +3,14 @@ import AuthGuard from "../guards/AuthGuard";
 import Home from "../pages/home/Home";
 import NotFound from "../pages/404/NotFound";
 import AdminLayout from "../pages/admin/admin.layout";
-import UserInfo from "../pages/product-info/ProductInfo";
+import ProductInfo from "../pages/product-info/ProductInfo";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
 import DashboardLayout from "../pages/dashboard/dashboard.layout";
 import Profile from "../pages/dashboard/profile/Profile";
 import Overview from "../pages/admin/overview/Overview";
 import AuthLayout from "../pages/auth/auth.layout";
+import Products from "../pages/products/Products";
 
 export default function PageRoutes(): JSX.Element {
    return (
@@ -22,7 +23,8 @@ export default function PageRoutes(): JSX.Element {
 
          {/* home */}
          <Route path="/" element={<Home />} caseSensitive />
-         <Route path="product/:id" element={<UserInfo />} caseSensitive />
+         <Route path="products" element={<Products />} caseSensitive />
+         <Route path="products/:id" element={<ProductInfo />} caseSensitive />
 
          {/* dashboard: (user) and also (admin) */}
          <Route element={<AuthGuard clientRoles={["user", "admin"]} />}>

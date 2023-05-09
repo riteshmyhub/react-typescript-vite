@@ -4,7 +4,7 @@ import UserService from "../../../redux/services/product.service";
 import { useAppSelector, useAppDispatch } from "../../../redux/store";
 import JsonViewer from "../../shared/components/json-viewer/JsonViewer";
 
-export default function UserInfo(): JSX.Element {
+export default function ProductInfo(): JSX.Element {
    const { loading, product, error } = useAppSelector((state) => state.productReducer);
    const { id } = useParams();
    const { _get_product_info } = new UserService();

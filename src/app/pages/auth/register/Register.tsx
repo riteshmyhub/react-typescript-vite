@@ -1,6 +1,9 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import AuthService from "../../../../redux/services/auth.service";
+import { useAppDispatch } from "../../../../redux/store";
 
 export default function Register(): JSX.Element {
+   const dispatch = useAppDispatch();
    const [formValues, setFormValues] = useState({
       email: "",
       password: "",
@@ -10,7 +13,18 @@ export default function Register(): JSX.Element {
    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (formValues.email && formValues.password && formValues.confirm_password) {
-         console.log(formValues);
+         if (formValues.password === formValues.confirm_password) {
+            const { _register } = new AuthService();
+            dispatch(
+               _register({
+                  email: formValues.email,
+                  password: formValues.password,
+                  returnSecureToken: true,
+               })
+            );
+         } else {
+            alert("password & confirm_password is not matched!");
+         }
       }
    };
 

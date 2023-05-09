@@ -1,16 +1,26 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useAppSelector } from "../../../../redux/store";
+import JsonViewer from "../../../shared/components/json-viewer/JsonViewer";
 
 export default function Profile(): JSX.Element {
-   const [text, setText] = useState<null | string>(null);
-
+   const authuser = useAppSelector((state) => state.authReducer);
    useEffect(() => {
-      setText("Profile component work!");
       return () => {};
    }, []);
 
    return (
       <div>
-         <p>{text}</p>
+         {authuser.loading ? (
+            "loading..."
+         ) : authuser.user ? (
+            <div>
+               <JsonViewer code={JSON.stringify(authuser.user)} />
+            </div>
+         ) : authuser.error ? (
+            authuser.error
+         ) : (
+            "no user"
+         )}
       </div>
    );
 }

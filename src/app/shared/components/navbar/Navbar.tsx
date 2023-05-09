@@ -29,9 +29,6 @@ export default function Navbar(): JSX.Element {
             <li>
                <NavLink to="/">home</NavLink>
             </li>
-            <li>
-               <NavLink to="users">users</NavLink>
-            </li>
             {authuser.user ? (
                <>
                   <li>

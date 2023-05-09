@@ -15,7 +15,13 @@ export default function Login(): JSX.Element {
    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (formValues.email && formValues.password) {
-         dispatch(_auth._login(formValues));
+         dispatch(
+            _auth._login({
+               email: formValues.email,
+               password: formValues.password,
+               returnSecureToken: true,
+            })
+         );
       }
    };
 
@@ -28,12 +34,12 @@ export default function Login(): JSX.Element {
    };
 
    useEffect(() => {
-      if (authuser.isAuthenticate) {
+      if (authuser.isAuthenticate || authuser.user) {
          dispatch(_auth._user_on_load());
          navigate("/");
       }
       return () => {};
-   }, [authuser.isAuthenticate]);
+   }, [authuser.isAuthenticate, authuser.user]);
 
    return (
       <div className="w-100">

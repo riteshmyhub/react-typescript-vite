@@ -9,6 +9,7 @@ function App(): JSX.Element {
    const dispatch = useAppDispatch();
    const auth = useAppSelector((state) => state.authReducer);
    const { _user_on_load } = new AuthService();
+
    useEffect(() => {
       dispatch(_user_on_load());
       return () => {};

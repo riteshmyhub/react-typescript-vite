@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import environment from "../../environment/environment";
+import environment from "../../environments/environment";
 
 export default class AuthService {
    constructor() {}

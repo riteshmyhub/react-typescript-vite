@@ -1,21 +1,25 @@
+```
+./src/environments/environment.ts
+
 import axios from "axios";
 
 const environment = Object.freeze({
    disabled: false,
    production: true,
-   API_KEY: "AIzaSyAslWktQbSTmaTgMExqsVpSO713qnJ8MKw",
+   API_KEY: {{firebase_API_KEY}},
    get firebase_auth_api() {
       return axios.create({
-         baseURL: "https://identitytoolkit.googleapis.com/v1",
+         baseURL: {{firebase_auth_URL}},
          params: { key: this.API_KEY },
       });
    },
    get firebase_api() {
       return axios.create({
-         baseURL: "https://auth-app-15c9e-default-rtdb.firebaseio.com",
+         baseURL: {{firebase_URL}},
          params: { key: this.API_KEY },
       });
    },
 });
 
 export default environment;
+```

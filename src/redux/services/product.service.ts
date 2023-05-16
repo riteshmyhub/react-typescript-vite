@@ -1,6 +1,6 @@
 import { ProductType } from "./../interfaces/product.type";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import environment from "../../environment/environment";
+import environment from "../../environments/environment";
 
 export default class ProductService {
    constructor() {}

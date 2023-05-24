@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../../../redux/store";
-import AuthService from "../../../../redux/services/auth.service";
+import { useAppDispatch, useAppSelector } from "../../../redux/store";
+import AuthService from "../../../redux/services/auth.service";
 
 export default function Navbar(): JSX.Element {
    const [toggle, setToggle] = useState<boolean>(false);

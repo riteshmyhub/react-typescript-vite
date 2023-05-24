@@ -1,16 +1,16 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import AuthGuard from "../guards/AuthGuard";
-import Home from "../pages/home/Home";
-import NotFound from "../pages/404/NotFound";
+import Home from "../pages/home/page";
+import NotFound from "../pages/404/page";
 import AdminLayout from "../pages/admin/admin.layout";
-import ProductInfo from "../pages/product-info/ProductInfo";
-import Login from "../pages/auth/login/Login";
-import Register from "../pages/auth/register/Register";
+import ProductInfo from "../pages/product-info/page";
+import Login from "../pages/auth/login/page";
+import Register from "../pages/auth/register/page";
 import DashboardLayout from "../pages/dashboard/dashboard.layout";
-import Profile from "../pages/dashboard/profile/Profile";
-import Overview from "../pages/admin/overview/Overview";
+import Profile from "../pages/dashboard/profile/page";
+import Overview from "../pages/admin/overview/page";
 import AuthLayout from "../pages/auth/auth.layout";
-import Products from "../pages/products/Products";
+import Products from "../pages/products/page";
 
 export default function PageRoutes(): JSX.Element {
    return (

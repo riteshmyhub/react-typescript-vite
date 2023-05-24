@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, Outlet as RouterOutlet, Navigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/store";
-import Profile from "../pages/dashboard/profile/Profile";
+import Profile from "../pages/dashboard/profile/page";
 
 interface clientRoles {
    clientRoles: string[];

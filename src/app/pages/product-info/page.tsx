@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import UserService from "../../../redux/services/product.service";
 import { useAppSelector, useAppDispatch } from "../../../redux/store";
-import JsonViewer from "../../shared/components/json-viewer/JsonViewer";
+import JsonViewer from "../../shared/components/JsonViewer";
 
 export default function ProductInfo(): JSX.Element {
    const { loading, product, error } = useAppSelector((state) => state.productReducer);

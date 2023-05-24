@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAppSelector } from "../../../../redux/store";
-import JsonViewer from "../../../shared/components/json-viewer/JsonViewer";
+import JsonViewer from "../../../shared/components/JsonViewer";
 
 export default function Profile(): JSX.Element {
    const authuser = useAppSelector((state) => state.authReducer);

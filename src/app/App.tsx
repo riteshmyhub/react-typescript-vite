@@ -1,6 +1,6 @@
 import PageRoutes from "./routes/routes";
 import "../assets/styles/style.css";
-import Navbar from "./shared/components/navbar/Navbar";
+import Navbar from "./shared/components/Navbar";
 import { useEffect } from "react";
 import AuthService from "../redux/services/auth.service";
 import { useAppDispatch, useAppSelector } from "../redux/store";
